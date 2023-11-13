@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"aula_intel\/star_wars\/star_wars[1:3]","start":1699893223103,"end":1699893227886,"title":"aula_intel\/star_wars\/star_wars[1:3] 13:33:43.103-13:33:47.886 Testando retorno people\/1\/."},{"id":2,"group":1,"content":"aula_intel\/star_wars\/star_wars[2:8]","start":1699893227920,"end":1699893229477,"title":"aula_intel\/star_wars\/star_wars[2:8] 13:33:47.920-13:33:49.477 Testando retorno people\/1\/ com informações inválidas."}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
