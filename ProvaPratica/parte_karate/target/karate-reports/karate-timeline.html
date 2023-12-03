@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"json_placeholder\/JSONPlaceholder[1:7]","start":1701638773496,"end":1701638776272,"title":"json_placeholder\/JSONPlaceholder[1:7] 18:26:13.496-18:26:16.272 Teste 1: Pegando elementos do array response e testando seu tipo."},{"id":2,"group":1,"content":"json_placeholder\/JSONPlaceholder[2:16]","start":1701638776332,"end":1701638776863,"title":"json_placeholder\/JSONPlaceholder[2:16] 18:26:16.332-18:26:16.863 Teste 2: Testando retorno com informações inválidas."},{"id":3,"group":1,"content":"json_placeholder\/JSONPlaceholder[3:21]","start":1701638776891,"end":1701638777599,"title":"json_placeholder\/JSONPlaceholder[3:21] 18:26:16.891-18:26:17.599 Teste 3: Criando um novo elemento com o método post."},{"id":4,"group":1,"content":"json_placeholder\/JSONPlaceholder[4:32]","start":1701638777625,"end":1701638778586,"title":"json_placeholder\/JSONPlaceholder[4:32] 18:26:17.625-18:26:18.586 Teste 4: Testando o retorno comments\/1 e verificando o JSON."},{"id":5,"group":1,"content":"json_placeholder\/JSONPlaceholder[5:40]","start":1701638778606,"end":1701638779121,"title":"json_placeholder\/JSONPlaceholder[5:40] 18:26:18.606-18:26:19.121 Teste 5: Testando o retorno comments com id inválido."}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
